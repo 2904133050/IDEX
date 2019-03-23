@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>注册</title>
+		<link rel="shortcut icon" type="text/css" th:href="@{/favicon.ico}"/>
+		<!--初始化样式-->
+		<link rel="stylesheet" type="text/css"  th:href="@{/css/normalize.css}"/>
+		<!--公共样式-->
+		<link rel="stylesheet" type="text/css" th:href="@{/css/base.css}"/>
+		<!--注册样式-->
+		<link rel="stylesheet" type="text/css"  th:href="@{/css/register.css}"/>
+        <!--导入js库-->
+        <script th:src="@{/js/jquery-1.8.3.min.js}"></script>
+		<!--输入信息验证，并注册-->
+        <script type="text/javascript" th:inline="javascript">
+            /*<![CDATA[*/
+            var countdown=60;
+            function validate(){
+
+                //手机号正则
+                var mPattern = /^1[34578]\d{9}$/;
+                if(mPattern.test($("#phone1").val())){
+                    $("#phone_text1").css("color","green");
+                    $("#phone_text1").html("手机号码格式正确！");
+                    var obj = $("#btn");
+                    settime(obj);
+                    //得到输手机号
+                    var phone =$("#phone1").val();
+                    if(phone!=""){
+                        $.ajax({
+                            url:"/user/validate",
+                            type:"post",
+                            dataType:"json",
+                            data:{
+                                phone:$("#phone1").val(),
+
+                            },
+                            error:function(){
+                                alert("失败")
+                            },
+                            success:function(data){
+                                $("#validate2").blur(function () {
+                                    var valitate2 = $("#validate2").val();
+                                    console.log(data.random)
+                                    if(valitate2==""){
+                                        $("#validate_text1").html("验证码为空！")
+                                        $("#psw").val("")
+                                    }else{
+                                        if(valitate2!=data.random){
+                                            $("#validate_text1").html("验证码错误！");
+                                            $("#validate2").val("")
+                                        }else{
+                                            $("#validate_text1").css("color","green")
+                                            $("#validate_text1").html("验证码正确！");
+                                        }
+                                    }
+
+                                })
+
+                            }
+                        })
+                    }
+				}else{
+                    $("#phone_text1").html("手机号码格式错误！");
+				}
+
+			}
+			function rigister1(){
+                //得到输入值
+				var register_phone =$("#phone1").val();
+				var register_psw = $("#psw").val();
+				var validate = $("#validate2").val();
+                //手机号正则
+                var mPattern = /^1[34578]\d{9}$/;
+                //密码不能含有非法字符，长度在4-10之间
+                var l_psw =/^[a-zA-Z0-9]{4,10}$/;
+
+                if(mPattern.test(register_phone)){
+                    if(validate!=""){
+                        if(l_psw.test(register_psw)){
+                            console.log($("#phone1").val()+$("#psw").val())
+                            $.ajax({
+                                url:"/user/register",
+                                type:"post",
+                                dataType:"json",
+                                data:{
+                                    user_name:$("#phone1").val(),
+                                    password:$("#psw").val()
+                                },
+                                error:function(){
+                                    alert("失败")
+                                },
+                                success:function(data){
+
+                                    if(data.tishi==0){
+                                        $("#phone_text1").html(data.msg)
+                                    }else if(data.tishi==1){
+                                        $("#phone_text1").html(data.msg)
+                                    }else if(data.tishi==2){
+                                        window.location.href="index.html"
+                                    }
+
+                                }
+                            })
+                        }else{
+                            $("#psw_text1").html("密码不能含有非法字符，长度在4-10之间");
+                            $("#psw").val("");
+                        }
+					}else{
+                        $("#validate_text1").html("验证码不能为空！")
+					}
+
+				}else{
+                    $("#phone_text1").html("手机号码格式不正确，请从新输入");
+                    $("#phone1").val("");
+				}
+            }
+            function settime(obj) { //发送验证码倒计时
+                if (countdown == 0) {
+                    obj.attr('disabled',false);
+                    //obj.removeattr("disabled");
+                    obj.val("从新获取验证码");
+                    countdown = 60;
+                    return;
+                } else {
+                    obj.attr('disabled',true);
+                    obj.val("发送(" + countdown + ")");
+                    countdown--;
+                }
+                setTimeout(function() {
+                        settime(obj)
+					} ,1000)
+            }
+            /*]]>*/
+		</script>
+	</head>
+	<body>
+		<!--头部开始-->
+		<header>
+			<div id="reg_header">
+			<div class="r_w">
+				<div class="reg_hb">
+					<a href="#" class="logo_img">
+						
+					</a>
+					<div class="logo_text">
+						<span>
+							欢迎注册
+						</span>
+					</div>
+					<a href="#" class="to_log" >已有账号，去登陆！</a>
+				</div>
+			</div>
+			</div>
+		</header>
+		<!--头部结束-->
+		<!--主体部分开始-->
+		<div id="reg_body">
+			<div class="r_w">
+				<div class="form_reg">
+					<div class="form_table">
+						<div class="gife_pkg">
+
+							<i></i>
+							<span>
+								注册领
+								<em>199</em>
+								元大礼包
+							</span>
+						</div>
+						<div class="reg_phone">
+							<label>手机号码</label>
+							<input type="text" placeholder="请输入手机号" name="" id="phone1" value="" />
+							<span id="phone_text1" style="position: absolute;left: 400px;color: red;width: 300px;height: 38px;font-size:14px;line-height: 38px"></span>
+
+                        </div>
+						<div class="reg_note">
+							<label>手机号验证</label>
+							<input type="text" placeholder="请输入手机验证码" name="" id="validate2" value="" />
+							<input type="button" id="btn" value="获取验证码" onclick="validate()" />
+							<!--<a href="#" id="validate_a" onclick="validate()">获取验证码</a>-->
+							<span id="validate_text1" style="position: absolute;left: 400px;color: red;width: 300px;height: 38px;font-size:14px;line-height: 38px"></span>
+	
+						</div>
+						<div class="reg_psw">
+							<label>设置密码</label>
+							<input type="password" placeholder="请输入密码" name="" id="psw"  />
+							<span id="psw_text1" style="position: absolute;left: 400px;color: red;width: 300px;height: 38px;font-size:14px;line-height: 38px"></span>
+						</div>
+			            
+                        <div id="tiao_yue">
+                        	<input type="checkbox" checked="checked" id="tiaokuan"/>
+                        	<a href="#">《苏宁易购会员章程》</a>
+                        	<a href="#">《易付宝协议》</a>
+                        	<a href="#">《苏宁广告联盟在线协议》</a>
+                        	<span id="jing_gao">您必须同意苏宁服务条款后，才能提交注册</span>
+                        </div>
+                        <input type="button" onclick="rigister1()"  id="submit1" value="提交注册" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主体部分结束-->
+		<!--页脚start-->
+	<footer>	
+			<div id="footer_two">
+				<div class="w">
+					<p>	
+						<a href="#">苏宁互联</a>
+						<span>|</span>
+						<a href="#">苏宁金融</a>
+						<span>|</span>
+						<a href="#">PP视频</a>
+						<span>|</span>
+						<a href="#">红孩子</a>
+						<span>|</span>
+						<a href="#">苏宁物流</a>
+						<span>|</span>
+						<a href="#">零售云</a>
+						<span>|</span>
+						<a href="#">知识产权举报</a>
+						<span>|</span>
+						<a href="#">投资者关系</a>
+					</p>
+					<p>
+						<a href="#">联系我们</a>
+						<span>|</span>
+						<a href="#">诚聘英才</a>
+						<span>|</span>
+						<a href="#">供应商入驻</a>
+						<span>|</span>
+						<a href="#">广告平台</a>
+						<span>|</span>
+						<a href="#">苏宁联盟</a>
+						<span>|</span>
+						<a href="#">苏宁招标</a>
+						<span>|</span>
+						<a href="#">友情链接</a>
+						<span>|</span>
+						<a href="#">法律申明</a>
+						<span>|</span>
+						<a href="#">用户体验提升计划</a>
+						<span>|</span>
+						<a href="#">股东会员认证</a>
+					</p>
+					<p>
+						<a href="#">Copyright© 2002-2018，苏宁易购集团股份有限公司版权所有</a>
+						<span>|</span>
+						<a href="#">苏公网安备 32010202010078号</a>
+						<span>|</span>
+						<a href="#">苏ICP备10207551号-4</a>
+						<span>|</span>
+						<a href="#">苏B1-20130131</a>
+					</p>
+					<p>|						
+					     <a href="#">苏B2-20130376</a>
+						<span>|</span>
+						<a href="#">苏B2-20130391</a>
+						<span>|</span>
+						<a href="#">出版物经营许可证新出发苏批字第A-243号</a>
+						<span>|</span>
+						<a href="#">互联网药品信息服务资格证书（苏）-非经营性-2016-0005</a>
+					</p>
+					<p>
+						本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）
+					</p>
+					<div id="shouquan_xs">
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+					</div>
+				</div>
+			</div>
+
+	</footer>
+	<!--	页脚end-->
+	</body>
+</html>

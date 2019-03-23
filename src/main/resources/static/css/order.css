@@ -1,0 +1,194 @@
+/*order导航开始*/
+#ord_he_nav{
+    
+	height: 65px;
+	min-width: 1290px;
+	background-color: #f70;
+   
+}
+.red_logo_img{
+
+	float: left;
+}
+
+.ord_nav{
+	
+	height: 30px;
+	padding-top: 10px;
+}
+
+.ord_nav ul{
+	margin-left: 60px;
+	float: left;
+}
+.ord_nav ul li{
+	float: left;
+	width: 60px;
+	margin-top: 10px;
+	text-align: center;
+}
+.ord_nav a{
+	color: white;
+	font-size: 14px;
+}
+.ord_nav a:hover{
+	color: white;
+}
+/*order导航开始结束*/
+/*左侧导航开始*/
+#order_body{
+	
+	width: 100%;
+	height: 800px;
+	background-color: #EFEFEF;
+}
+.ord_module{
+	float: left;
+	width: 160px;
+	padding: 20px 0;
+	height: 100%;
+	background-color: white;
+	border: 1px solid #CCCCCC;
+	margin: 0 auto;
+}
+.ord_hei{
+	height: 100%;
+	width: 160px;
+}
+article .dt{
+	padding-left: 20px;
+	margin-bottom: 5px;
+}
+article .dd{
+	padding-left: 40px;
+	margin-bottom: 5px;
+}
+article .dt{
+	 font-family:"Microsoft YaHei";
+	 font-weight: 700;
+}
+article i{
+	font-family: "icomoon";
+	font-style: normal;
+	font-weight: normal;
+}
+article .dt a{
+	 font-size: 14px;
+}
+#module_a{
+	width: 160px;
+	height: 30px;
+	text-align: center;
+	border: 1px solid #CCCCCC;
+	background-color: #F2F2F2;
+}
+#module_a:active .module_col{
+	display: none;
+}
+#module_a i{
+	
+	font-size: 16px;
+}
+/*左侧导航结束*/
+/*订单主页开始*/
+.order_ri_body{
+	float:right;
+	height: 500px;
+	width: 1010px;
+	margin: 10px 0px 20px 10px;
+	background-color: white;
+}
+.recomment{
+	float:right;
+	height: 240px;
+	width: 1010px;
+	margin: 0 0 20px 10px;
+	background-color: white;
+}
+/*订单主页结束*/
+/*订单主体开始*/
+.ord_topp{
+	margin: 0 auto;
+	height: 60px;
+	width: 100%;
+}
+.ord_topp span{
+	margin-left: 30px;
+	font-size: 20px;
+	line-height: 60px;
+	font-weight: 500;
+}
+.ord_ribo_nav{
+	height: 40px;
+	width: 100%;
+}
+.ord_ribo_nav ul{
+	padding-left: 30px;
+	float: left;
+}
+.ord_ribo_nav ul li{
+	text-align: center;
+	width: 100px;
+	font-size: 14px;
+	line-height: 40px;
+	float: left;
+	border: 1px solid #EAEAEA;
+}
+.ord_ribo_search{
+	position: relative;
+	height: 50px;
+	margin-left:30px ;
+	width: 100%;
+	border: 1px solid #EAEAEA;
+}
+.ord_ribo_search p{
+	position: absolute;
+	top: 13px;
+	height: 15px;
+	margin-left: 30px;
+}
+.ord_ribo_search input{
+	height: 25px;
+	float: left;
+	width: 150px;
+	border-bottom: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
+}
+.ord_ribo_search button{
+	height: 28px;
+	float: left;
+	width: 80px;
+	border-bottom: 1px solid #CCCCCC;
+	border-left: 0px;
+}
+.ord_ribo_goods{
+	width: 100%;
+	height: 500px;
+}
+
+.ord_ribo_goods ul{
+	float: left;
+	height: 25px;
+	background-color: #EAEAEA;
+	width: 100%;
+}
+.ord_ribo_goods li{
+	float: right;
+	text-align: center;
+	line-height: 25px;
+	width: 100px;
+	font-size: 12px;
+}
+.ord_one_month{
+	margin-left: 20px;
+	float: left!important;
+}
+.ord_goods p{
+	padding-top: 150px;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 900;
+	color: #FE9900;;
+	
+}
+/*订单主体结束*/

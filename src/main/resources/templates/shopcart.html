@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+			<!--样式初始化-->
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+		<!--公共样式-->
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<!--订单样式-->
+		<link rel="stylesheet" type="text/css" href="css/shopcart.css"/>
+		<!--标志性图标-->
+		<link rel="shortcut icon" type="text/css" href="../static/favicon.ico"/>
+		<!--本地jQuery库-->
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<!--引入jQuery-->
+		<script src="js/public.js"></script>
+	</head>
+	<body>
+			<!--header导航start-->
+		
+		<div class="head-nav">
+		<div class="w">
+			<ul class="fl">
+				<li>
+					<a href="#">
+						<i></i>
+					返回首页</a></li>
+				<li>
+					<a href="#">
+					商家入驻</a></li>
+				<li>
+					<a href="#">
+					客户服务</a></li>
+				<li>
+					<i></i>
+					<a href="#">
+					娄底
+					<i></i>
+					</a>
+				   
+				</li>
+			</ul>
+			<ul class="fr">
+				<li>
+					<a href="#">
+					请登录</a></li>
+				<li class="f60">
+					<a href="#" >
+					注册有礼</a></li>
+				<li>
+					<a href="#">
+					我的订单</a></li>
+				<li>
+					<a href="#">
+					我的易购</a></li>
+				<li>
+					<a href="#">
+					苏宁会员</a></li>
+				<li class="f60">
+					<i></i>
+					<a href="#">
+					购物车</a></li>
+				<li>
+					<a href="#">
+					易付宝</a></li>
+				<li>
+					<a href="#">
+					企业采购</a></li>
+				<li>
+					<a href="#">
+					手机苏宁</a></li>
+			</ul>
+		</div>
+		</div>
+		<!--header导航end-->
+		
+		<!--主体部分-->
+		<div id="shopcart">
+			<div class="w">
+		<!--shopcart logo开始-->
+		<div class="shopc_logo">
+		<img src="img/public_img/logo.png" />
+		<div class="shopcart_search">
+			<i></i>
+			<input type="" name="" id="" value="" />
+			<button>搜索</button>
+		</div>
+		
+		</div>
+		<div class="w">
+			<div class="shopc_addr"> 
+			<span>配送至：</span>
+			<div class="shopc_city">
+				<a href="#">
+					湖南
+				</a>
+				<a href="#">
+					长沙
+				</a>
+				<a href="#">
+					天心
+				</a>
+			</div>
+		</div>	
+		</div>
+	
+		<!--shopcart logo结束-->
+		
+		<!--shopcart主体开始-->
+		
+			<div class="w">
+				<div id="goods_header">
+					<div class="all_select">
+						<input type="checkbox" name="" id="" value=""/>
+						<label for=""></label>
+						全选
+					</div>
+					<ul>
+						<li class="goods_item">商品信息</li>
+						<li>规格</li>
+						<li>单价</li>
+						<li>数量</li>
+						<li>小计</li>
+						<li>操作</li>
+					</ul>
+			   </div>
+			   <div id="shopcart_goods">
+			   	<div class="gs_checkbox">
+			   		<input type="checkbox" name="" id="" value=""/>
+			   		<label for=""></label>
+			   	</div>
+			   	<div class="gs_item">
+			   		<div class="gs_item_a">
+			   			<a href="#">
+			   				<img src="img/item/pijiu.jpg"/>
+			   			</a>
+			   		</div>
+			   		<div class="gs_item_p">
+			   			<a href="#">丹麦进口啤酒（ROYAL）皇家碧域比尔森黄啤酒330ml*4听 四连包</a>
+			   		</div>
+			   	</div>
+			   	<div class="gs_spacs">
+			   		<span>型号：</span>
+			   	</div>
+			   	<div class="gs_price">
+			   		<span>
+			   			15￥
+			   		</span>
+			   	</div>
+			   	<div class="gs_num">
+			   		<a href="#" id="jian">-</a>
+			   		<input type="text" name="num" id="item_num" value="1" />
+			   		<a href="#" id="jia">+</a>
+			   	</div>
+			   	<div class="gs_sum">
+			   		<span>
+			   			15￥
+			   		</span>
+			   	</div>
+			   	<div class="gs_op">
+			   		<a href="#">移入收藏</a>
+			   		<a href="#">删除</a>
+			   		<a href="#">查找类似</a>
+			   	</div>
+			   </div>
+		    </div>
+		<!--shopcart主体开始-->
+		</div>
+		</div>
+		<!--主体部分-->
+	<!--页脚start-->
+	<footer>	
+			<div id="footer_two">
+				<div class="w">
+					<p>	
+						<a href="#">苏宁互联</a>
+						<span>|</span>
+						<a href="#">苏宁金融</a>
+						<span>|</span>
+						<a href="#">PP视频</a>
+						<span>|</span>
+						<a href="#">红孩子</a>
+						<span>|</span>
+						<a href="#">苏宁物流</a>
+						<span>|</span>
+						<a href="#">零售云</a>
+						<span>|</span>
+						<a href="#">知识产权举报</a>
+						<span>|</span>
+						<a href="#">投资者关系</a>
+					</p>
+					<p>
+						<a href="#">联系我们</a>
+						<span>|</span>
+						<a href="#">诚聘英才</a>
+						<span>|</span>
+						<a href="#">供应商入驻</a>
+						<span>|</span>
+						<a href="#">广告平台</a>
+						<span>|</span>
+						<a href="#">苏宁联盟</a>
+						<span>|</span>
+						<a href="#">苏宁招标</a>
+						<span>|</span>
+						<a href="#">友情链接</a>
+						<span>|</span>
+						<a href="#">法律申明</a>
+						<span>|</span>
+						<a href="#">用户体验提升计划</a>
+						<span>|</span>
+						<a href="#">股东会员认证</a>
+					</p>
+					<p>
+						<a href="#">Copyright© 2002-2018，苏宁易购集团股份有限公司版权所有</a>
+						<span>|</span>
+						<a href="#">苏公网安备 32010202010078号</a>
+						<span>|</span>
+						<a href="#">苏ICP备10207551号-4</a>
+						<span>|</span>
+						<a href="#">苏B1-20130131</a>
+					</p>
+					<p>|						
+					     <a href="#">苏B2-20130376</a>
+						<span>|</span>
+						<a href="#">苏B2-20130391</a>
+						<span>|</span>
+						<a href="#">出版物经营许可证新出发苏批字第A-243号</a>
+						<span>|</span>
+						<a href="#">互联网药品信息服务资格证书（苏）-非经营性-2016-0005</a>
+					</p>
+					<p>
+						本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）
+					</p>
+					<div id="shouquan_xs">
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+					</div>
+				</div>
+			</div>
+        </div>
+	</footer>
+	<!--	页脚end-->
+	</body>
+</html>

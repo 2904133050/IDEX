@@ -1,0 +1,174 @@
+/*版心*/
+body{
+	background-color: #f8f8f8;
+}
+.r_w{
+	margin: 0 auto;
+	width:990px;
+	}
+/*头部样式开始*/
+#reg_header{
+	
+	height: 88px;
+
+}
+.reg_hb{
+	position: relative;
+	height: 88px;
+}
+.logo_img{
+	height: 88px;
+	width: 190px;
+	background:url(../img/public_img/logo.png) no-repeat 0px 15px; 
+	float: left;
+}
+.logo_text{
+	float: left;
+	width: 82px;
+	height: 88px;
+	line-height: 88px;
+	font-size: 20px;
+	margin-left:20px ;
+}
+.to_log{
+	font-size:14px ;
+	color: black;
+	position: absolute;
+	bottom: 5px;
+	right: 0px;
+}
+
+/*头部样式结束*/
+/*主体样式开始*/
+#reg_body{
+	height: 460px;
+}
+.form_reg{
+	border: 1px solid #EAEAEA;
+	border-top: 2px solid #FF6600;
+	padding: 55px 0px;
+	height: 348px;
+	background-color: white;
+}
+.form_table{
+	position: relative;
+	margin: 0 auto;
+	height: 347px;
+	width: 380px;
+
+}
+.gife_pkg{
+	position: absolute;
+	padding-left: 2px;
+	height: 17px;
+	left: 0px;
+	top: 0px;
+}
+.gife_pkg i{
+	font-family: "icomoon";
+	font-style: normal;
+	font-weight: normal;
+	color: #fe9900;
+}
+
+.gife_pkg em{
+	font-style: normal;
+	color: #FE9900;
+}
+.form_table input{
+	font-size: 14px;
+	height: 36px;
+	border: 0px;
+}
+.form_table label{
+	color: #000000;
+	font-size: 14px;
+	height: 38px;
+	width: 76px;
+	padding-left: 11px;
+	text-align: center;
+}
+.reg_phone{
+	position: absolute;
+	top: 30px;
+	width: 378px;
+	height: 38px;
+	border: 1px solid #545454;
+	
+}
+.reg_phone input{
+	margin-left: 16px;
+}
+
+.reg_note{
+	position: absolute;
+	top: 90px;
+	width: 378px;
+	height: 38px;
+	border: 1px solid #545454;
+
+}
+
+.reg_note #btn{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    border-left: 1px solid #545454;
+	width: 104px;
+	height: 38px;
+	line-height: 38px;
+	float: right;
+	background-color: #EAEAEA;
+}
+.reg_psw{
+	top: 160px;
+	position: absolute;
+	width: 378px;
+	height: 38px;
+	border: 1px solid #545454;
+}
+
+.reg_psw input{
+	
+	margin-left: 16px;
+}
+#tiao_yue{
+	position: absolute;
+	top: 230px;
+	width: 380px;
+	height: 48px;
+	font-size: 12px;
+
+}
+#tiao_yue input{
+	float: left;
+}
+#tiao_yue a{
+	margin-top: 10px;
+	display: block;
+	float: left;
+	font-size: 12px;
+}
+#jing_gao{
+	display: none;
+	margin-top: 5px;
+	float: left;
+	color: red;
+	font-size:14px ;
+}
+#submit1{
+	display: block;
+	position: absolute;
+	bottom: 20px;
+	color: white;
+	font-size: 20px;
+	width: 380px;
+	height: 33px;
+	padding: 0;
+	background-color: #FE9900;
+	cursor: pointer;
+}
+#submit:hover{
+	cursor: pointer;
+}
+/*主体样式开始*/
